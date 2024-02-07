@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+
+  [tooltip] {
+    position: relative;
+    }
+
+  [tooltip]::before,
+  [tooltip]::after {
+  text-transform: none;
+  font-size: 15px;
+  line-height: 1;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;pointer-events: none;position: absolute;display: none;opacity: 0;
+    }
+  
+  [tooltip]::before {
+    content: '';
+    border: 5px solid transparent;
+    z-index: 1001;
+    }
+  
+  [tooltip]::after {
+    content: attr(tooltip);text-align: center;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 1ch 1.5ch;border-radius: 20px;box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);background:white;color:#21e1ae;z-index: 1000; /* absurdity 2 */
+    }
+    
+    /* Make the tooltips respond to hover */
+  [tooltip]:hover::before,
+  [tooltip]:hover::after {
+    display: block;
+    }
+  
+  [tooltip][flow^="down"]::before {
+    top: 140%;border-top-width: 0;border-bottom-color: white;
+    }
+  
+  [tooltip][flow^="down"]::after {
+    top: calc(140% + 5px);
+    }
+  
+  [tooltip][flow^="down"]::before,
+  [tooltip][flow^="down"]::after {
+    left: 50%;-webkit-transform: translate(-50%, .5em);transform: translate(-50%, .5em);
+    }
+  
+    @-webkit-keyframes tooltips-vert {
+    to {
+      opacity: 1;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    }
+    @keyframes tooltips-vert {
+    to {
+      opacity: 1;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    }
+    
+    [tooltip]:not([flow]):hover::before,
+    [tooltip]:not([flow]):hover::after,
+    [tooltip][flow^="down"]:hover::before,
+    [tooltip][flow^="down"]:hover::after {
+    -webkit-animation: tooltips-vert 300ms ease-out forwards;
+    animation: tooltips-vert 300ms ease-out forwards;
+    }
+  
+  .clear {
+    clear: left;
+  }
+  
+  .container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .top-wrapper {
+    padding: 160px 0;
+    background:linear-gradient( #09aeea,#21e1ae);
+    
+  }
+  
+  .top-wrapper h1 {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 1px;
+    margin:10px 0px;
+    text-shadow: 2px 2px 8px grey;
+  }
+  
+  .top-wrapper p {
+    color:white;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px grey;
+  }
+  
+  .btn-wrapper {
+    text-align: left;
+    margin: 30px 0;
+  }
+  
+  .btn-wrapper p {
+    margin: 10px 0;
+  }
+
+  .btn-wrapper-team {
+    text-align: center;
+  }
+
+  .btn-team {
+    color:#21e1ae;
+    margin: 5px;
+  }
+  
+  .btn-fb {
+    padding: 10px 14px;
+    background-color:royalblue;
+  }
+
+  .btn-tw {
+    
+    padding: 10px;
+    background-color:deepskyblue;
+  }
+
+  .btn-ig {
+    
+    padding: 10px 12px;
+    background-color: magenta;
+  }
+  
+  .btn-icon {
+    margin: 5px;
+
+  }
+
+  .btn {
+    color: white;
+    display: inline-block;
+    border-radius:30px;
+    text-align: center;
+    margin: 10px;
+    box-shadow:0 8px 6px -6px darkblue;
+  }
+  
+  
+  .fa {
+    margin-right: 5px;
+  }
+  
+  header {
+    height: 65px;
+    width: 100%;
+    background:linear-gradient(#21e1ae, #09aeea);
+    box-shadow: 0 0 38px 0 grey;
+    position :fixed;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .logo {
+    width:80px;
+    margin-top: 15px;
+  }
+  
+  .header-left {
+    float: left;
+  }
+  
+  .header-right {
+    float: right;
+    margin-right: -25px;
+  }
+  
+  .header-right a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s;
+  }
+  
+  .header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Tambahkan CSS untuk menu-icon */
+  .menu-icon {
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 21px 0;
+    /* Gantikan property display ke none */
+    display: none;
+    visibility: hidden;
+  }
+  
+  
+  .lesson-wrapper {
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .heading {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: #5f5d60;
+  }
+  
+  .heading h2 {
+    font-weight: normal;
+  }
+
+  .lesson2 {
+float:left;
+width: 33.33%;
+  }
+
+  .lesson {
+    float: left;
+    width: 20%;
+  }
+
+  .lesson p {
+    font-weight: bold;
+  }
+
+  .lesson-icon {
+    position: relative;
+  }
+  
+  .lesson-icon p {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .text-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 20px;
+    color: grey;
+  }
+  
+  .heading h3 {
+    font-weight: normal;
+  }
+  
+  .message-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 218px;
+    text-align: center;
+  }
+  
+  
+  footer img {
+    width: 125px;
+  }
+  
+  footer p {
+    color:white;
+    font-size: 12px;
+  }
+  
+  footer {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: rgb(14, 73, 128);
+  }
